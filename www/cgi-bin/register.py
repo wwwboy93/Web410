@@ -1,18 +1,8 @@
 #!C:\Python27\python
 
-# this code has been enhanced from the base demo given in class to include more complicated form submission types
-# including drop-down lists, checkboxes, and a password field to hide the credit card number.
-#
-# note that this code is extraordinarily fragile.  things that will blow it up include:
-#    a. not specifying a phone number
-#    b. not specifying a credit card number
-#    c. choosing 0 or 1 toppings
-#    d. probably other things.
-#  I will leave it as an exercise for the interested student to fix these errors.
-
 import cgitb
 import cgi
-import MySQLdb
+import sqlite3
 import hashlib
 import datetime
 
@@ -29,7 +19,7 @@ print '''<html>
 
     <style type="text/css">
       h1 {
-          font-size: 100px;
+          font-size: 30px;
           font-family: monospace;
       }
 
@@ -42,32 +32,35 @@ print '''<html>
 
 
 def insert_user(username, password, email):
-    conn = MySQLdb.connect('localhost', 'cc', '123123', 'web410')
+    conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
-    results = conn.execute('SELECT id FROM user where id = 1')
+    cursor.execute('SELECT id FROM user where id = 1')
+
     date = str(datetime.datetime.now())
-    hasher = hashlib.md5()
+
     # if the id =1 user is not existing we create it
-    if results.arraysize == 0:
+    if cursor.rowcount == 0:
+        hasher = hashlib.md5()
         hasher.update('123123')
         hasher.update(date)
         encrypted = hasher.hexdigest()
-        cursor.execute("INSERT INTO users(id, username, password, date) VALUES(?,?,?, ?);"
-                       , ['1', 'admin', encrypted, date])
+        cursor.execute("INSERT INTO user(id, username, password, date) VALUES('1','admin','%s','%s');"
+                       % (encrypted, date))
         conn.commit()
-    results = conn.execute('SELECT id FROM user where user_name = ?', [username])
-    if results.arraysize == 1:
+
+    cursor.execute("SELECT id FROM user where username = '%s';" % (username))
+    if cursor.rowcount == 1:
         return -1
+    hasher = hashlib.md5()
     hasher.update(password)
     hasher.update(date)
     encrypted = hasher.hexdigest()
 
-    cursor.execute("INSERT INTO users(username, password, email, date)"
-                   "VALUES(?,?,?,?);", [username, encrypted, email, date])
+    cursor.execute("INSERT INTO user(username, password, email, date)"
+                   "VALUES('%s','%s','%s','%s');" % (username, encrypted, email, date))
     conn.commit()
     conn.close()
     return 0
-
 
 
 username = user_form['username'].value

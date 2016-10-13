@@ -1,55 +1,74 @@
 #!C:\Python27\python
 
+
 import cgitb
 import cgi
+import sqlite3
 import hashlib
-import MySQLdb
-
-
-def authenticate(username, password):
-    conn = MySQLdb.connect('localhost', 'cc', '123123', 'web410')
-    cursor = conn.cursor()
-
-    results = conn.execute('SELECT password,date FROM users WHERE username=?', [username])
-    if results.arraysize == 1:
-        row = results.next()
-        encrypted = row[1]
-        salt = row[2]
-
-        hasher = hashlib.md5()
-        hasher.update(password)
-        hasher.update(salt)
-
-        digest = hasher.hexdigest()
-
-        conn.close()
-
-        return digest == encrypted
-    else:
-        return False
-
 
 cgitb.enable()
 
-login_form = cgi.FieldStorage()
+user_form = cgi.FieldStorage()
 
 print 'Content-Type: text/html'
-print # don't forget required blank line
+print
+
 print '''<html>
-    <head>
-        <title>Login Results</title>
-    </head>
-    <body>'''
+  <head>
+    <title>Welcome aboard</title>
 
-username = login_form['username'].value
-password = login_form['password'].value
+    <style type="text/css">
+      h1 {
+          font-size: 30px;
+          font-family: monospace;
+      }
 
-if authenticate(username, password):
-    print '<h1>User ' + username + ' has been successfully authenticated!</h1>'
+
+    </style>
+
+  </head>
+  <body>
+'''
+
+
+def user_login(username, password):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM user where username = '%s';" % username)
+    date = None
+    if cursor.rowcount == 0:
+        return -1
+    results = cursor.fetchall()
+    for row in results:
+        password_f = row[2]
+        date = row[4]
+
+    conn.close()
+    hasher = hashlib.md5()
+    hasher.update(password)
+    hasher.update(date)
+    encrypted = hasher.hexdigest()
+    if encrypted != password_f:
+        return -1
+
+    return 0
+
+
+username = user_form['username'].value
+password = user_form['password'].value
+
+if user_login(username, password) == -1:
+    print '<h1>Wrong username or password'
 else:
-    print '<h1>Authentication failed!</h1>'
+    print '<h1>welcome, '+username
 
 print '''
-    </body>
-</html>'''
+  </body>
+</html>
+
+'''
+
+
+
+
 
