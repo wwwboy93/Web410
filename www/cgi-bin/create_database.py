@@ -2,6 +2,7 @@
 
 import sqlite3
 import hashlib
+import datetime
 conn = sqlite3.connect('web410.db')
 cursor = conn.cursor()
 cursor.execute('DROP TABLE IF EXISTS user')

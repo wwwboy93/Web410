@@ -35,6 +35,8 @@ def user_login(username, password):
     conn = sqlite3.connect('web410.db')
     cursor = conn.cursor()
     result = cursor.execute("SELECT * FROM user where username = '%s';" % (username))
+    if cursor.fetchone() is None:
+        return -1
     date = None
     results = cursor.fetchone()
     password_f = results[2]
