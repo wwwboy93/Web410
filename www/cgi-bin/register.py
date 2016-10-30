@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #!C:\Python27\python
 
 import cgitb
@@ -32,7 +33,7 @@ print '''<html>
 
 
 def insert_user(username, password, email):
-    conn = sqlite3.connect('web410.db')
+    conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
     date = str(datetime.datetime.now())
     cursor.execute("SELECT * FROM user where username = '%s'" % (username))

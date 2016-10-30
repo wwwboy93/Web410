@@ -1,9 +1,10 @@
-#!C:\Python27\python
+#!/usr/bin/python
+#  !C:\Python27\python
 
 import sqlite3
 import hashlib
 import datetime
-conn = sqlite3.connect('web410.db')
+conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 cursor.execute('DROP TABLE IF EXISTS user')
 cursor.execute('CREATE TABLE IF NOT EXISTS user(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT'

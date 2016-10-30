@@ -1,15 +1,38 @@
-#!/usr/bin/python
+#!C:\Python27\python
 
 
 import cgitb
 import cgi
 import sqlite3
 import hashlib
-import json
+
+cgitb.enable()
+
+user_form = cgi.FieldStorage()
+
+print 'Content-Type: text/html'
+print
+
+print '''<html>
+  <head>
+    <title>Welcome aboard</title>
+
+    <style type="text/css">
+      h1 {
+          font-size: 30px;
+          font-family: monospace;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+'''
 
 
 def user_login(username, password):
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('web410.db')
     cursor = conn.cursor()
     results = cursor.execute("SELECT * FROM user where username = '%s';" % (username)).fetchone()
     if results is None:
@@ -28,27 +51,20 @@ def user_login(username, password):
 
     return 0
 
-cgitb.enable()
 
-
-print "Content-type: application/json"
-print 
-
-user_info = cgi.FieldStorage()
-
-username = user_info['username'].value
-password = user_info['password'].value
-
-response = {}
+username = user_form['username'].value
+password = user_form['password'].value
 
 if user_login(username, password) == -1:
-    # print '<h1>Wrong username or password'
-    response['response'] = -1
+    print '<h1>Wrong username or password'
 else:
-    response['response'] = 0
-    
-print json.dumps(response)
+    print '<h1>welcome, '+username
 
+print '''
+  </body>
+</html>
+
+'''
 
 
 
