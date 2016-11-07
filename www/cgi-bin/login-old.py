@@ -1,4 +1,4 @@
-#!C:\Python27\python
+#!C:\Python27\python.exe
 
 
 import cgitb

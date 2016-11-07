@@ -38,6 +38,8 @@ var login = function() {
             }
             else {
                 $('.login').hide();
+                // Set a cookie at Client with the returned transID (transaction ID) expires within 60 days
+                $.cookie($username, response.response, { expires: 60 });
                 $('#login_res').html("welcome, " + $username + "<br>");
             }
 

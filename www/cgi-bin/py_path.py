@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+#!C:\Python27\python.exe
 '''
 change python interpreter path for all python files in this directory.
 
@@ -7,16 +6,19 @@ The method to do the replacement is very shitty; but it works.
 '''
 
 import os
-import sys
+# import sys
 import re
 
-py_path = ""
-if sys.argv[1] == "mac":
-    py_path = "#!/usr/bin/python\n"
-else:
-    py_path = "#!C:\Python27\python\n"
+py_path = "#!C:\Python27\python.exe\n\n"
 
-for file_name in os.listdir():
+# if sys.argv[1] == "mac":
+#     py_path = "#!/usr/bin/python\n"
+# else:
+#     py_path = "#!C:\Python27\python\n"
+
+# print os.listdir(os.curdir)
+
+for file_name in os.listdir(os.curdir):
     if re.search("\.py", file_name) is not None:
         # find a .py file
         target_file = open(file_name, "r")
