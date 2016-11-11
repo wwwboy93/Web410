@@ -8,7 +8,8 @@ import json
 import random
 import string
 
-def create_new_activity(username, transid, activityname, activitycontent):
+def create_new_activity(username, activityname, activitycontent):
+    return 0
     # conn = sqlite3.connect('users.db')
     # cursor = conn.cursor()
     # results = cursor.execute("SELECT * FROM user where username = '%s';" % (username)).fetchone()
@@ -20,13 +21,11 @@ def create_new_activity(username, transid, activityname, activitycontent):
     #     return 0
     # else:
     #     return -1
-    return 0
 
 # For backend testing only:
 # create_new_activity("asd", "asd")
 
 cgitb.enable()
-
 
 print "Content-type: application/json"
 print 

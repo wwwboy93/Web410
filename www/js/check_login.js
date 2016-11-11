@@ -28,10 +28,10 @@ $(document).ready(function() {
                 
                 $('#error').empty();
                 if (response.response == -1) {
-                    console.log("-1-1-1-1-1-1-1-1");
                     $('#check_login_res').html("Please log in again");
                 }
                 else {
+                    $('.login').hide();
                     $('#check_login_res').html("User: " + $username + " logged in (this is log in indicator)");
                 }
 

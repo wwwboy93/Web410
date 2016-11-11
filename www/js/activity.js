@@ -12,28 +12,19 @@ $(document).ready(function() {
 
 /* activity function */
 var activity = function() {
-    var username = $('#username').val();
-    /*read a cookie that contains { username: transid } */
-    // var transid1 = $.cookie(username); // => transid
-    // if (transid1 == undefined) {
-    //     transid1 = " ";
-    // }
-    // var transid1 = "E9S3GmL0BoIRodVizgHOahG5UcOnS08j";
-    var activityname = $('#activityname').val();
-    var activitycontent = $('#activitycontent').val();
-    // console.log("transid: " + transid1);
-    // alert( "error" );
-    // console.log(typeof $(username).val());
+    var $username = $('#username').val();
+    var $activityname = $('#activityname').val();
+    var $activitycontent = $('#activitycontent').val();
+
     $.ajax({
 
         url: '../cgi-bin/new_activity.py',
         // contentType: "application/json; charset=utf-8",
 
         data: {
-            username: username,
-            // transid: transid1,
-            activityname: activityname,
-            activitycontent: activitycontent
+            username: $username,
+            activityname: $activityname,
+            activitycontent: $activitycontent
         },
 
         type: "POST",
@@ -52,19 +43,15 @@ var activity = function() {
                 
             }
             else {
-                // $('.login').hide();
+                $('.activity').hide();
                 $('#activity_res').html("New activity created!" + "<br>");
             }
 
         },
 
         error: function(request) {
-            // do something
+            console.log("create activity failed");
         }
-
-        
-
-
 
     });
     
