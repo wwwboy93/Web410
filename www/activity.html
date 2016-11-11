@@ -4,10 +4,14 @@
         <script src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/activity.js"></script>
         <script src="js/jquery.cookie.js"></script>
+        <script src="js/check_login.js"></script>
+        <script src="js/log_out.js"></script>
         <title>New Activity!</title>
     </head>
     <body>
         <h1>Publish a new activity!</h1>
+        <br>
+        
         <br>
         <div class="activity">
             username <input type="text" id="username"> 
@@ -18,5 +22,13 @@
         <br>
         <div id="activity_res"></div>
         <div id="error"></div>
+        <br>
+        <div id="check_login_res"></div>
+        <br>
+        <div class="log_out">
+            <button type="button" id="log_out">log_out</button>
+        </div>
+        <br>
+        <div id="log_out_res"></div>
     </body>
 </html>

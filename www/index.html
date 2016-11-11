@@ -4,6 +4,8 @@
         <script src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script src="js/jquery.cookie.js"></script>
+        <script src="js/log_out.js"></script>
+        <script src="js/check_login.js"></script>
         <title>Outdoors!</title>
     </head>
     <body>
@@ -19,11 +21,17 @@
         </div>
         <br>
         <div id="login_res"></div>
-        <div id="error"></div>
-
+        <div id="error"></div>  
+       
+        <div id="check_login_res"></div>
         <br>
         <form action="/register.html">
             <input type="submit" value="register">
         </form>
+        <br>
+        <div class="log_out">
+            <button type="button" id="log_out">log_out</button>
+        </div>
+         <div id="log_out_res"></div>
     </body>
 </html>

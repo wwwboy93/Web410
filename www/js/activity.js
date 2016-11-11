@@ -14,14 +14,14 @@ $(document).ready(function() {
 var activity = function() {
     var username = $('#username').val();
     /*read a cookie that contains { username: transid } */
-    var transid1 = $.cookie(username); // => transid
-    if (transid1 == undefined) {
-        transid1 = " ";
-    }
+    // var transid1 = $.cookie(username); // => transid
+    // if (transid1 == undefined) {
+    //     transid1 = " ";
+    // }
     // var transid1 = "E9S3GmL0BoIRodVizgHOahG5UcOnS08j";
     var activityname = $('#activityname').val();
     var activitycontent = $('#activitycontent').val();
-    console.log("transid: " + transid1);
+    // console.log("transid: " + transid1);
     // alert( "error" );
     // console.log(typeof $(username).val());
     $.ajax({
@@ -31,7 +31,7 @@ var activity = function() {
 
         data: {
             username: username,
-            transid: transid1,
+            // transid: transid1,
             activityname: activityname,
             activitycontent: activitycontent
         },
@@ -47,7 +47,7 @@ var activity = function() {
             $('#error').empty();
 
             if (response.response == -1) {
-                $('#activity_res').html("<font color=\"red\">Wrong session ID, Please login again</font>");
+                $('#activity_res').html("Can not create an activity!");
                 clear_info();
                 
             }
@@ -61,6 +61,11 @@ var activity = function() {
         error: function(request) {
             // do something
         }
+
+        
+
+
+
     });
     
 };
