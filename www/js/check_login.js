@@ -47,6 +47,7 @@ $(document).ready(function() {
         console.log("log in check failed");
         $('.log_out').hide();
         $('.activity').hide();
+        // ??? 如何只在 非主页 显示
         $('#check_login_res').html("<font color=\"red\">Please log in first</font>");
     }
 
