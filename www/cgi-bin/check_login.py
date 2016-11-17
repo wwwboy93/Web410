@@ -1,4 +1,4 @@
-#!C:\Python27\python.exe
+#!/usr/bin/python
 
 import cgitb
 import cgi
@@ -7,6 +7,9 @@ import hashlib
 import json
 import random
 import string
+
+print "Content-type: application/json"
+print 
 
 def login_check(username, transid):
     conn = sqlite3.connect('users.db')
@@ -24,8 +27,6 @@ def login_check(username, transid):
 cgitb.enable()
 
 
-print "Content-type: application/json"
-print 
 
 user_info = cgi.FieldStorage()
 
