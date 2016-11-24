@@ -17,8 +17,8 @@ cursor.execute('CREATE TABLE IF NOT EXISTS user(id INTEGER NOT NULL PRIMARY KEY 
 # create activity table
 cursor.execute('DROP TABLE IF EXISTS activity')
 cursor.execute('CREATE TABLE IF NOT EXISTS activity(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT'
-               ', user_id INTEGER NOT NULL, title varchar(100), content varchar(1000), create_time varchar(100)'
-               ', category varchar(30), area varchar(30))')
+               ', user_id INTEGER NOT NULL, title varchar(100), content varchar(10000), create_time varchar(100)'
+               ', category varchar(30), area varchar(30), comment_count INTEGER)')
 
 # create comment table
 cursor.execute('DROP TABLE IF EXISTS comment')
