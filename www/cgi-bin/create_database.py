@@ -1,4 +1,4 @@
-#!C:\Python27\python.exe
+#!/usr/bin/python
 
 
 
@@ -18,7 +18,7 @@ cursor.execute('CREATE TABLE IF NOT EXISTS user(user_id INTEGER NOT NULL PRIMARY
 cursor.execute('DROP TABLE IF EXISTS activity')
 cursor.execute('CREATE TABLE IF NOT EXISTS activity(act_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT'
                ', user_id INTEGER NOT NULL, title varchar(100), content varchar(2000), create_time varchar(100)'
-               ', category varchar(30), area varchar(30), reply_timses INTERGER)')
+               ', category varchar(30), area varchar(30), reply_times INTERGER)')
 
 # create comment table
 cursor.execute('DROP TABLE IF EXISTS comment')
