@@ -31,9 +31,11 @@ function list_activities_by_category() {
                 /* list activities by categories */
                 for(var category in response) {
                     console.log(category);
+                    /* handle activities by category */
                     var activities = response[category];
                     for (var i = 0; i < activities.length; i++) {
                         var activity = activities[i];
+                        /* add a new <li> */
                         var li = "<li>" + activity.title + "</li>";
                         $('#' + category).append(li);
                     }
