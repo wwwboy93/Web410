@@ -5,6 +5,10 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="./js/widgEditor.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script src="js/check_login.js"></script>
+	<script src="js/list_activities.js"></script>
 	
 	<style type="text/css" media="all">
 		@import "css/main.css";
@@ -60,66 +64,51 @@
 					<input type="button" name="search_click" id="search_btn" value="GO!">
 				</div>
 			</ul>
-
-	
-			
 		</div>
 	</div>
 	<div id="body_main">
 		<div id="body_head">
 			<div class="subcat">
 				<div class="subcat_left">
-					<p> Sports</p>
-					<ul>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
+					<p>Sports</p>
+					<ul id="sport">
 					</ul>
-					
 				</div>
 				<div class="subcat_right">
-					<p> Sports</p>
-					<ul>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
+					<p>Travels</p>
+					<ul id="travel">
 					</ul>
 					
 				</div>
 				<div class="subcat_left">
-					<p> Sports</p>
-					<ul>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
+					<p>Games</p>
+					<ul id="game">
 					</ul>
 					
 				</div>
 				<div class="subcat_right">
-					<p> Sports</p>
-					<ul>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
+					<p> Events</p>
+					<ul id="event">
 					</ul>
-					
 				</div>
 			</div>
 			
 		</div>	
 		<div id="body_content">
-			<table>
+			<table id="all_activities">
 				<tr class="table_head">
 					<td width="40%">Title</td>
 					<td width="10%">Creator</td>
 					<td width="10%">Response</td>
 					<td width="10%">Date</td>
 				</tr>
-				<tr class="table_entry">
+<!-- 				<tr class="table_entry">
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr> -->
+<!-- 				<tr class="table_entry">
 					<td>test</td>
 					<td>test</td>
 					<td>test</td>
@@ -130,13 +119,7 @@
 					<td>test</td>
 					<td>test</td>
 					<td>test</td>
-				</tr>
-				<tr class="table_entry">
-					<td>test</td>
-					<td>test</td>
-					<td>test</td>
-					<td>test</td>
-				</tr>
+				</tr> -->
 
 			</table>
 		</div>

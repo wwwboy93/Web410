@@ -5,13 +5,47 @@
 
 $(document).ready(function() {
     console.log("list activities");
-    list_all_activities();
     list_activities_by_category();
+    list_all_activities();
 });
 
 function list_activities_by_category() {
     /* to be done*/
-}
+    console.log("list activities by categories");
+
+    $.ajax({
+        url: '../cgi-bin/get_activities.py',
+
+        data: {
+            type: "category"
+        },
+
+        type: "POST",
+
+        dataType: "json",
+
+        success: function(response) {
+            console.log("get_activities.py executed");
+
+            if (response != null) {
+                /* list activities by categories */
+                for(var category in response) {
+                    console.log(category);
+                    var activities = response[category];
+                    for (var i = 0; i < activities.length; i++) {
+                        var activity = activities[i];
+                        var li = "<li>" + activity.title + "</li>";
+                        $('#' + category).append(li);
+                    }
+                }
+            }
+        },
+
+        error: function() {
+            console.log("ERROR: fetching activities by categories failed");
+        }
+    });
+};
 
 /* list all activities by their created time */
 function list_all_activities() {
@@ -24,7 +58,7 @@ function list_all_activities() {
             type: "all"
         },
 
-        type: "GET",
+        type: "POST",
 
         dataType: "json",
 
