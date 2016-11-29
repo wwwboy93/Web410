@@ -28,11 +28,11 @@ $(document).ready(function() {
                 
                 $('#error').empty();
                 if (response.response == -1) {
-                    $('#check_login_res').html("Please log in again");
+                    $('#login_td').append('<font color=\"red\">Please login again</font>');
                 }
                 else {
-                    $('.login').hide();
-                    $('#check_login_res').html("User: " + $username + " logged in (this is log in indicator)");
+                    $('.login').html("welcome, " + $username + "&nbsp&nbsp&nbsp<a href='profile.html'>profile</a>&nbsp&nbsp&nbsp");
+                    $('.login').append("<button id='log_out' >logout</button>");
                 }
 
             },
