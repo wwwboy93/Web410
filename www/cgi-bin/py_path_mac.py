@@ -1,4 +1,4 @@
-#!C:\Python27\python.exe
+#!/usr/bin/python
 
 change python interpreter path for all python files in this directory.
 
