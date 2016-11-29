@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python\n
+
 
 change python interpreter path for all python files in this directory.
 

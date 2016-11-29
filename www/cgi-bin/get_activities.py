@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!C:\Python27\python.exe
+
 
 '''
 get_all_activities fetch required information about activities;

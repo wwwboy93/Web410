@@ -1,6 +1,7 @@
 #!C:\Python27\python.exe
 
 
+
 import cgitb
 import cgi
 import sqlite3
@@ -13,7 +14,7 @@ print "Content-type: application/json"
 print 
 
 def profile(username):
-    conn1 = sqlite3.connect('users.db')
+    conn1 = sqlite3.connect('hangout.db')
     cursor1 = conn1.cursor()
     results1 = cursor1.execute("SELECT * FROM user where username = '%s';" % (username)).fetchone()
     conn1.close()

@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!C:\Python27\python.exe
+
 
 
 import cgitb
@@ -13,7 +14,7 @@ print "Content-type: application/json"
 print 
 
 def login_check(username, transid):
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()
     results = cursor.execute("SELECT * FROM user where username = '%s';" % (username)).fetchone()
     conn.close()

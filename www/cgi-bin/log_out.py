@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!C:\Python27\python.exe
+
 
 
 import cgitb
@@ -10,7 +11,7 @@ import random
 import string
 
 def user_logout(username):
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()
     transID = "-1"
     cursor.execute("UPDATE user SET transID = '%s' WHERE username = '%s';" % (transID, username))

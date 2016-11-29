@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!C:\Python27\python.exe
+
 """
 A simple form to upload a file with allowed extensions
 "txt,htm,html,png,gif,jpg,ico,zip,rar,avi,mpg,rm,ram,wma,mp3,wav,pdf,doc,ppt"

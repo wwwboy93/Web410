@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!C:\Python27\python.exe
+
 
 import cgitb
 import cgi
@@ -9,7 +10,7 @@ import random
 import string
 
 def user_login(username, password):
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()
     results = cursor.execute("SELECT * FROM user where username = '%s';" % (username)).fetchone()
     if results is None:
