@@ -1,4 +1,4 @@
-#!C:\Python27\python.exe
+#!/usr/bin/python
 
 print "Content type: text/html"
 print

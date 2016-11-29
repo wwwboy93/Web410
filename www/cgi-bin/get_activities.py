@@ -55,7 +55,7 @@ def get_by_category(category):
         return -1
 
     for activity in activities:
-        activity_json = { }
+        activity_json = {}
         # print activity
         activity_json["title"] = str(activity[0])
         activity_json["username"] = str(activity[1])
