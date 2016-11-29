@@ -4,7 +4,6 @@
 
 $(document).ready(function() {
     console.log("start to log in");
-
     $('#login').click(login);
 });
 
@@ -32,17 +31,16 @@ var login = function() {
             
             $('#error').empty();
             if (response.response == -1) {
-                $('#login_res').html("<font color=\"red\">wrong username or password! please try again</font>");
+                $('#login_td').append('<font color=\"red\">wrong username or password</font>');
                 clear_login_info();
                 
             }
             else {
-                $('.login').hide();
-                $('.log_out').show();
+                $('.login').html("welcome, " + $username + "&nbsp&nbsp&nbsp<a href='profile.html'>profile</a>&nbsp&nbsp&nbsp")
+                $('.login').append("<button id='log_out' >logout</button>")
                 // Set a cookie at Client with the returned transID (transaction ID) expires within 60 days
                 $.cookie($username, response.response, { expires: 60 });
-                $('#login_res').html("welcome, " + $username + "<br>");
-                $('#check_login_res').html("<font color=\"red\">You have logged in!</font>");
+
                 
             }
 
