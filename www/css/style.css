@@ -256,6 +256,13 @@ div{
 	height: 150px;
 	border: 1px solid;
 }
+
+#re_editor{
+	margin:30px 0;
+	padding: 0 10%;
+	min-height: 100px;
+
+}
 /* end thread CSS*/
 
 /* start of profile CSS*/
@@ -264,3 +271,4 @@ div{
 	font-size: 30px;
 }
 /* end of profile CSS*/
+

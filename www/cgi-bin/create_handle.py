@@ -90,7 +90,6 @@ import sqlite3
 import datetime
 
 
-
 def strip_path( fpname ):
   """strip off leading path and drive stuff from dos/unix/mac file full name
   takes care of '/' ':' '\' '%2f' '%5c' '%3a'
@@ -123,7 +122,7 @@ NO_FILE       = -4
 
 
 
-def process_fileitem( file_item_name, form, local_file_path = 'E:\Ampps\www\pics\memberphotos', allowed_file_types = 'jpg' ):
+def process_fileitem( file_item_name, form, local_file_path , allowed_file_types):
   """Gets file from form field file_item_name and saves it with the original
   file name to local_file_path. Returns (file_length,file_name) if success.
   Otherwise raise UploadException( NO_FILE_FIELD|NO_FILENAME|BAD_EXTENTION|NO_FILE )
@@ -170,9 +169,9 @@ def insert_activity(form, user_id=0):
     area = form['area'].value
 
     file_field_name = "picture"
-    loc_path = "E:\Ampps\www\pics\memberphotos"
+    loc_path = "../pics/memberphotos"
     file_types = "jpg,png,gif"
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()
     date = str(datetime.datetime.now())
     cursor.execute("SELECT * FROM activity where act_id = (select MAX(act_id) from activity)")
@@ -192,12 +191,12 @@ def insert_activity(form, user_id=0):
 
     conn.commit()
     conn.close()
-    return 1
+    return new_id
 # end of definition of functions
 
 create_form = cgi.FieldStorage()
-
-if(insert_activity(create_form, 1)!=1):
+new_id=insert_activity(create_form, 1)
+if(new_id==0):
     print '''
         something really wrong
       </body>
@@ -206,7 +205,13 @@ if(insert_activity(create_form, 1)!=1):
     '''
 else:
     print '''
-        success!!
+    <div style="margin-left:20%;margin-top:50px; font-size:25px; font-family:fantasy;">Successfully create the thread! Redirect to the thread</div>
+    '''
+    print "<script>setTimeout(function(){window.location.href = 'thread.py?id=%d';},3000)</script>" % new_id
+
+    print '''
+
+
       </body>
     </html>
 
