@@ -7,6 +7,13 @@ $(document).ready(function(){
         console.log("not log in");
         $('#body_head').html("<p align='center' style='font-size: 30px;'>You need login first to create activities.</p>s");
     }else{
-        console.log("logged in");
+
+        var $sp = $NameWithID.split(";");
+        var $userid = $sp[1];
+        var $transid = $cookie1[$NameWithID];
+        $('#user_id').val($userid);
+        $('#trans_id').val($transid);
+
+        console.log("logged in "+$userid+" "+$transid);
     }
 });

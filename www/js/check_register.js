@@ -1,9 +1,14 @@
 
 function check_all(){
-	if(check_username()&&check_email())
-		return true;
-	else
-		return false;
+	if(check_username()&&check_email()){
+        return true;
+    }
+
+	else{
+        return false;
+
+    }
+
 }
 
 function check_email(){
@@ -34,13 +39,16 @@ function check_username(){
 		$('#username_check').html("<font color='red'>user name not valid</font>");
                 return false;
 	}
+
+    var result;
+
     $.ajax({
         url: '../cgi-bin/isexist.py',
 
         data: {
             username: $username
         },
-
+        async: false,
         type: "POST",
 
         dataType: "json",
@@ -49,21 +57,24 @@ function check_username(){
             console.log("login successfully");
             console.log(response);
 
-            $('#error').empty();
             if (response.response == -1) {
                $('#username_check').html("<font color='red'>user name already exists</font>");
-                return false;
+                result = -1;
             }
             else {
                 $('#username_check').html("<font color='green'>username OK</font>");
-                return true;
+                result =1;
             }
 
         },
-
         error: function(request) {
             // do something
             $('#username_check').html("<font color='red'>Cannot access database!</font>");
         }
     });
+
+    if(result==1){
+        return true;
+    }else
+        return false;
 }

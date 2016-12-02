@@ -166,11 +166,10 @@ div{
 	width: 100%;
 	min-height: 500px;
 	padding-top: 10px;
+
 }
-.subcat p{
-	font-family: fantasy;
-	font-size: 1em;
-}
+
+
 .subcat_left{
 	padding: 20px 30px;
 	margin-bottom: 10px;
@@ -180,6 +179,17 @@ div{
 	float: left;
 	border: 1px solid;
 	display: block;
+}
+.subcat_left{
+
+    background-repeat: no-repeat;
+    background-position: 80% 50%;
+	background-size: auto 60%;
+}
+.subcat_right{
+     background-repeat: no-repeat;
+    background-position: 80% 50%;
+	background-size: auto 60%;
 }
 .subcat_right{
 	padding: 20px 30px;
@@ -191,6 +201,12 @@ div{
 	border: 1px solid;
 	display: block;
 }
+.subcat p{
+	font-family: fantasy;
+	font-size: 1em;
+}
+
+
 #body_content table{
 	margin: 3px 5%;
 	border: 1px solid;

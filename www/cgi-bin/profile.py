@@ -11,7 +11,8 @@ import random
 import string
 
 print "Content-type: application/json"
-print 
+print
+
 
 def profile(username):
     conn1 = sqlite3.connect('hangout.db')
@@ -21,8 +22,8 @@ def profile(username):
     if results1 is None:
         return -1
     else:
-        return [results1[0], results1[3]] #user_id , email
-         
+        return [results1[0], results1[3]]  # user_id , email
+
 
 def profile_activity(user_id):
     conn2 = sqlite3.connect('hangout.db')
@@ -37,11 +38,14 @@ def profile_activity(user_id):
         # print
         all_activity = ""
         for row in results2:
-            content1 = row[3].replace("<p>","")
-            content2 = content1.replace("</p>","")
-            all_activity += ("<font color=\"blue\">" + "<pre>Title:\t\t"+row[2]+"<br>Content:\t"+content2+"<br>Create time:\t"+row[4][:-7]+"<br>Catagory:\t"+row[5]+"<br>Area:\t\t"+row[6]+'<br>' + "</font>")
+            content1 = row[3].replace("<p>", "")
+            content2 = content1.replace("</p>", "")
+            all_activity += (
+            "<font color=\"blue\">" + "<pre>Title:\t\t" + row[2] + "<br>Content:\t" + content2 + "<br>Create time:\t" +
+            row[4][:-7] + "<br>Catagory:\t" + row[5] + "<br>Area:\t\t" + row[6] + '<br>' + "</font>")
         # print all_activity
         return all_activity
+
 
 def get_act_title_using_id(act_id):
     con = sqlite3.connect('hangout.db')
@@ -50,6 +54,8 @@ def get_act_title_using_id(act_id):
     con.close()
     if re == None: return ""
     return re[2]
+
+
 # get_act_title_using_id(2)
 
 def get_replier_using_id(replier_id):
@@ -60,6 +66,8 @@ def get_replier_using_id(replier_id):
     con.close()
     if re == None: return ""
     return re[1]
+
+
 # get_replier_using_id(1)
 
 # def get_userid_using_actid(act_id):
@@ -85,11 +93,12 @@ def profile_reply(user_id):
         all_replies = ""
         # print results3
         for row in results3:
-            all_replies += ("<font color=\"blue\">" + "<pre>Activity:\t"+get_act_title_using_id(row[1])+"<br>My Reply:\t"+row[2]+"<br>Create time:\t"+row[3][:-7]+"<br>Replier:\t"+get_replier_using_id(row[4])+'<br>' + "</font>")
+            all_replies += (
+            "<font color=\"blue\">" + "<pre>Activity:\t" + get_act_title_using_id(row[1]) + "<br>My Reply:\t" + row[
+                2] + "<br>Create time:\t" + row[3][:-7] + "<br>Replier:\t" + get_replier_using_id(
+                row[4]) + '<br>' + "</font>")
         # print all_replies
         return all_replies
-
-
 
 
 cgitb.enable()
@@ -103,10 +112,10 @@ response = {}
 res1 = profile(username)
 user_id = res1[0]
 email = res1[1]
-if email == None: 
+if email == None:
     email = ""
 else:
-    email = "<font color=\"blue\">"+ email +"</font>"
+    email = "<font color=\"blue\">" + email + "</font>"
 
 activities_str = profile_activity(user_id)
 reply_str = profile_reply(user_id)
@@ -117,13 +126,12 @@ res['email'] = email
 res['activities_str'] = activities_str
 res['reply_str'] = reply_str
 
-
 if res1 == -1 and activities_str == -1 and reply_str == -1:
     response['response'] = -1
 else:
     response = res
     response['response'] = 0
-    
+
 print json.dumps(response)
 
 

@@ -11,7 +11,11 @@ print '''
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="../js/widgEditor.js"></script>
-	
+	<script src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/login.js"></script>
+	<script src="../js/log_out.js"></script>
+	<script src="../js/check_login_py.js"></script>
+
 	<style type="text/css" media="all">
 		@import "../css/main.css";
 		@import "../css/widgEditor.css";
@@ -33,7 +37,7 @@ print '''
 						<tr>
 							<td>username:</td>
 							<td><input type="text" id="username"></td>
-							<td><a href="../register.html">Sign up</a></td>
+							<td><a href="./register.html">Sign up</a></td>
 						</tr>
 						<tr>
 							<td>password:</td>
@@ -53,8 +57,8 @@ print '''
 		<div id="menu">
 
 			<ul>
-				<li><a class="active" href="../index.html">Home</a></li>
-				<li class="dropdown"><a href="../activity.html">Activites</a>
+				<li><a  href="../index.html">Home</a></li>
+				<li class="dropdown"><a class="active" href="../activity.html">Activites</a>
 				<div class="dropdown-content">
 					<a href="#">Sports</a>
 					<a href="#">Games</a>

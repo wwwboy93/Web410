@@ -74,9 +74,9 @@ print '''
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="../js/widgEditor.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="../js/login.js"></script>
+	<script src="../js/login.js"></script>
 	<script src="../js/log_out.js"></script>
-	<script src="../js/check_login.js"></script>
+	<script src="../js/check_login_py.js"></script>
 	
 	<style type="text/css" media="all">
 		@import "../css/main.css";
@@ -92,30 +92,28 @@ print '''
 		<div id="top_area">
 			<div id="logo_bar">Hang OUT</div>
 			<div id="login_bar">
-				<div id="check_login_res"></div>
+
+
 				<div class="login">
 					<table>
 						<tr>
 							<td>username:</td>
 							<td><input type="text" id="username"></td>
-							<td><a href="#">
-					        <form action="../register.html">
-					            <input type="submit" value="register">
-					        </form>
-					        </a></td>
+							<td><a href="./register.html">Sign up</a></td>
 						</tr>
 						<tr>
 							<td>password:</td>
 							<td><input type="password" id="password"></td>
-							<td colspan="2"><button type="button" id="login">login</button>	</td>
 							<td><a href="#">forget?</a></td>
-							
+
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
 						</tr>
 					</table>
 				</div>
-		        <div id="login_res"></div>
-		        <div id="error"></div>  
-		        <div id="log_out_res"></div>
+
 			</div>
 		</div>
 		<div id="menu">

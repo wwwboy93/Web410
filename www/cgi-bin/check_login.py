@@ -5,10 +5,7 @@
 import cgitb
 import cgi
 import sqlite3
-import hashlib
 import json
-import random
-import string
 
 print "Content-type: application/json"
 print 

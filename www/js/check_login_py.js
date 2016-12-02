@@ -11,7 +11,7 @@ $(document).ready(function() {
     var $transid = $cookie1[$NameWithID];
     console.log($transid);
     console.log("new username and transid: "+ $username + "," + $userid + "," + $transid);
-    
+
     if ($username != undefined) {
         console.log("user name: " + $username + $transid);
 
@@ -31,13 +31,13 @@ $(document).ready(function() {
             success: function(response) {
                 console.log("check_login successfully");
                 console.log(response);
-                
+
                 $('#error').empty();
                 if (response.response == -1) {
                     $('#login_td').append('<font color=\"red\">Please login again</font>');
                 }
                 else {
-                    $('.login').html("Welcome, " + $username + "&nbsp&nbsp&nbsp<a href='./profile.html'>profile</a>&nbsp&nbsp&nbsp");
+                    $('.login').html("Welcome, " + $username + "&nbsp&nbsp&nbsp<a href='../profile.html'>profile</a>&nbsp&nbsp&nbsp");
                     $('.login').append("<button id='log_out' >logout</button>");
                     $('#log_out').click(log_out);
 
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 
 
-    
+
 
 
 
