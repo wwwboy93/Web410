@@ -3,6 +3,8 @@ $(document).ready(function() {
     var $cookie1 = $.cookie();
     console.log($cookie1);
     var $NameWithID = Object.keys($cookie1)[0];
+    if($NameWithID==null)
+        return;
     var $sp = $NameWithID.split(";");
     var $username = $sp[0]
     var $userid = $sp[1]
@@ -53,7 +55,6 @@ $(document).ready(function() {
         console.log("log in check failed");
         $('.log_out').hide();
         $('.activity').hide();
-        // ??? 如何只在 非主页 显示
         $('#check_login_res').html("<font color=\"red\">Please log in first</font>");
     }
 

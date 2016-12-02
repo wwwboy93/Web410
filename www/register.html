@@ -2,18 +2,21 @@
 <html>
 <head>
 	<title>Sign Up</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/check_register.js"></script>
 </head>
 <body>
 <div>
 	<h1>Sign Up</h1>
-	<form method="POST" action="/cgi-bin/register.py">
+	<form method="POST" onsubmit='return check_all();' action="/cgi-bin/register.py">
 		<table>
 			<tr>
 				<td>
 					Username:
 				</td>
 				<td>
-					<input type="text" name="username"/>
+					<input type="text" id="username" name ="username" onchange='check_username()'/>
+					<span id="username_check"></span>
 				</td>
 			</tr>
 			<tr>
@@ -29,7 +32,8 @@
 					E-mail:
 				</td>
 				<td>
-					<input type="text" name="email"/>
+					<input type="text" id="email" name="email"  onchange='check_email()'/>
+					<span id="email_check"></span>
 				</td>
 			</tr>
 		</table>		
