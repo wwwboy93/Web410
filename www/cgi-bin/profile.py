@@ -37,7 +37,9 @@ def profile_activity(user_id):
         # print
         all_activity = ""
         for row in results2:
-            all_activity += ("<font color=\"blue\">" + "<pre>Title:\t\t"+row[2]+"<br>Content:\t"+row[3]+"<br>Create time:\t"+row[4][:-7]+"<br>Catagory:\t"+row[5]+"<br>Area:\t\t"+row[6]+'<br>' + "</font>")
+            content1 = row[3].replace("<p>","")
+            content2 = content1.replace("</p>","")
+            all_activity += ("<font color=\"blue\">" + "<pre>Title:\t\t"+row[2]+"<br>Content:\t"+content2+"<br>Create time:\t"+row[4][:-7]+"<br>Catagory:\t"+row[5]+"<br>Area:\t\t"+row[6]+'<br>' + "</font>")
         # print all_activity
         return all_activity
 
@@ -60,13 +62,21 @@ def get_replier_using_id(replier_id):
     return re[1]
 # get_replier_using_id(1)
 
+# def get_userid_using_actid(act_id):
+#     con = sqlite3.connect('hangout.db')
+#     cur = con.cursor()
+#     re = cur.execute("SELECT * FROM activity where act_id = '%s';" % (act_id)).fetchone()
+#     con.close()
+#     if re == None: return ""
+#     return re[1]
+
 
 
 # return other people replied contents
 def profile_reply(user_id):
     conn3 = sqlite3.connect('hangout.db')
     cursor3 = conn3.cursor()
-    results3 = cursor3.execute("SELECT * FROM comment where user_id = '%s';" % (user_id)).fetchall()
+    results3 = cursor3.execute("SELECT * FROM comment where replier_id = '%s';" % (user_id)).fetchall()
     conn3.close()
     # print results3
     if results3 is None:
@@ -75,7 +85,7 @@ def profile_reply(user_id):
         all_replies = ""
         # print results3
         for row in results3:
-            all_replies += ("<font color=\"blue\">" + "<pre>Activity:\t"+get_act_title_using_id(row[2])+"<br>Reply:\t\t"+row[3]+"<br>Create time:\t"+row[4][:-7]+"<br>Replier:\t"+get_replier_using_id(row[5])+'<br>' + "</font>")
+            all_replies += ("<font color=\"blue\">" + "<pre>Activity:\t"+get_act_title_using_id(row[1])+"<br>My Reply:\t"+row[2]+"<br>Create time:\t"+row[3][:-7]+"<br>Replier:\t"+get_replier_using_id(row[4])+'<br>' + "</font>")
         # print all_replies
         return all_replies
 
