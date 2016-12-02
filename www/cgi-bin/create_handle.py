@@ -183,12 +183,30 @@ def get_category_name(category):
     if(category=="4"):
         return "event";
 
-def insert_activity(form, user_id=0):
+def create_login_check(userid, transid):
+    conn = sqlite3.connect('hangout.db')
+    cursor = conn.cursor()
+    results = cursor.execute("SELECT * FROM user where user_id = '%s';" % (userid)).fetchone()
+    conn.close()
+    if results is None:
+        return -1
+    elif results[5] == transid:
+        return 0
+    else:
+        return -1
+
+def insert_activity(form):
     title=form['title'].value
     noise = form['noise'].value
     category = form['category'].value
     area = form['area'].value
-
+    user_id=form['user_id'].value
+    trans_id=form['trans_id'].value
+    if(create_login_check(user_id,trans_id)!=0):
+        print '''
+           <div style="margin-left:20%;margin-top:50px; font-size:25px; font-family:fantasy;">Do not try to mess up my web pages</div>
+        '''
+        return 0
     file_field_name = "picture"
     loc_path = "../pics/memberphotos"
     file_types = "jpg,png,gif"
@@ -217,7 +235,7 @@ def insert_activity(form, user_id=0):
 # end of definition of functions
 
 create_form = cgi.FieldStorage()
-new_id=insert_activity(create_form, 1)
+new_id=insert_activity(create_form)
 if(new_id==0):
     print '''
         something really wrong
