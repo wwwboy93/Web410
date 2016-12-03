@@ -1,6 +1,8 @@
 #!C:\Python27\python.exe
 
 
+
+
 import cgi
 import cgitb
 import sqlite3
@@ -104,7 +106,7 @@ print '''
 						<tr>
 							<td>password:</td>
 							<td><input type="password" id="password"></td>
-							<td><a href="#">forget?</a></td>
+							<td><a href="../forget.html">forget?</a></td>
 
 						</tr>
 						<tr>

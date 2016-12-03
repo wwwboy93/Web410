@@ -2,6 +2,8 @@
 
 
 
+
+
 import sqlite3
 import hashlib
 import datetime
@@ -33,6 +35,11 @@ cursor.execute('CREATE TABLE IF NOT EXISTS participants( activity_id INTEGER, us
 cursor.execute('DROP TABLE IF EXISTS image')
 cursor.execute('CREATE TABLE IF NOT EXISTS image(img_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT'
                ', path varchar(256), activity_id INTEGER, comment_id INTEGER)')
+
+#create security code table
+cursor.execute('DROP TABLE IF EXISTS sec_code')
+cursor.execute('CREATE TABLE IF NOT EXISTS sec_code(code_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT'
+               ', username varchar(100), security_code varchar(100))')
 
 conn.commit()
 

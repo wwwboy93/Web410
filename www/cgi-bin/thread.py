@@ -1,5 +1,7 @@
 #!C:\Python27\python.exe
 
+
+
 print 'Content-Type: text/html'
 print
 
@@ -42,7 +44,7 @@ print '''
 						<tr>
 							<td>password:</td>
 							<td><input type="password" id="password"></td>
-							<td><a href="#">forget?</a></td>
+							<td><a href="../forget.html">forget?</a></td>
 
 						</tr>
 						<tr>

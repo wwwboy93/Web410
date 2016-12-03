@@ -13,11 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/www$py_path.coverage" NAME="py_path Coverage Results" MODIFIED="1480460159460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
     <SUITE FILE_PATH="coverage/www$join_near.coverage" NAME="join_near Coverage Results" MODIFIED="1480460831207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
-    <SUITE FILE_PATH="coverage/www$view_database.coverage" NAME="view_database Coverage Results" MODIFIED="1480644658913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
+    <SUITE FILE_PATH="coverage/www$py_path.coverage" NAME="py_path Coverage Results" MODIFIED="1480778316704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
+    <SUITE FILE_PATH="coverage/www$view_database.coverage" NAME="view_database Coverage Results" MODIFIED="1480779162770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
     <SUITE FILE_PATH="coverage/www$test_imp.coverage" NAME="test_imp Coverage Results" MODIFIED="1479960131958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
-    <SUITE FILE_PATH="coverage/www$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1480460167573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
+    <SUITE FILE_PATH="coverage/www$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1480779056341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cgi-bin" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -28,12 +28,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new_activity.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/new_activity.html">
+      <file leaf-file-name="resetpw.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cgi-bin/resetpw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="353">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <element signature="e#27#39#0" expanded="true" />
+                <marker date="1480778337207" expanded="true" signature="254:374" ph="SELECT creat... sec_code" />
+                <marker date="1480778337207" expanded="true" signature="751:804" ph="UPDATE user " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findpw.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cgi-bin/findpw.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="68" column="15" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
+              <folding>
+                <element signature="e#28#40#0" expanded="true" />
+                <marker date="1480779260927" expanded="true" signature="358:398" ph="SELECT * FRO... user" />
+                <marker date="1480779260927" expanded="true" signature="1603:1645" ph="DELETE FROM " />
+                <marker date="1480779260927" expanded="true" signature="1680:1763" ph="INSERT INTO sec_code... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cgi-bin/create_database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+              <folding>
+                <marker date="1480778316798" expanded="true" signature="554:833" ph="CREATE TABLE... activity" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +84,8 @@
       <file leaf-file-name="thread.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cgi-bin/thread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="134">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -51,13 +94,48 @@
       <file leaf-file-name="view_activity.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cgi-bin/view_activity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+            <state relative-caret-position="540">
+              <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
               <folding>
-                <marker date="1480699185637" expanded="true" signature="317:355" ph="SELECT * FRO... activity" />
-                <marker date="1480699185637" expanded="true" signature="893:936" ph="select path image" />
-                <marker date="1480699185637" expanded="true" signature="1222:1264" ph="select * fro... comment" />
+                <marker date="1480778454562" expanded="true" signature="319:357" ph="SELECT * FRO... activity" />
+                <marker date="1480778454562" expanded="true" signature="895:938" ph="select path image" />
+                <marker date="1480778454562" expanded="true" signature="1224:1266" ph="select * fro... comment" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cgi-bin/view_database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding>
+                <marker date="1480779012546" expanded="true" signature="130:148" ph="SELECT * FRO... user" />
+                <marker date="1480779012546" expanded="true" signature="223:245" ph="SELECT * FRO... activity" />
+                <marker date="1480779012546" expanded="true" signature="323:342" ph="SELECT * FRO... image" />
+                <marker date="1480779012546" expanded="true" signature="416:438" ph="SELECT * FRO... sec_code" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forget.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/forget.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forget.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forget.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="37" column="77" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="77" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,51 +143,15 @@
       <file leaf-file-name="create_handle.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cgi-bin/create_handle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="236" column="32" selection-start-line="236" selection-start-column="32" selection-end-line="236" selection-end-column="32" />
+            <state relative-caret-position="134">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
-                <marker date="1480700187984" expanded="true" signature="4693:4732" ph="SELECT * FRO... user" />
-                <marker date="1480700187984" expanded="true" signature="5582:5654" ph="SELECT * FRO... activity" />
-                <marker date="1480700187984" expanded="true" signature="5621:5653" ph="select MAX(a... activity" />
-                <marker date="1480700187984" expanded="true" signature="5930:6027" ph="INSERT INTO image... " />
-                <marker date="1480700187984" expanded="true" signature="6122:6202" ph="INSERT INTO activity... " />
-                <marker date="1480700187984" expanded="true" signature="6122:6267" ph="INSERT INTO activity... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="check_login_py.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/check_login_py.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cgi-bin/profile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding>
-                <marker date="1480697760951" expanded="true" signature="296:336" ph="SELECT * FRO... user" />
-                <marker date="1480697760951" expanded="true" signature="632:675" ph="SELECT * FRO... activity" />
-                <marker date="1480697760951" expanded="true" signature="1784:1826" ph="SELECT * FRO... activity" />
-                <marker date="1480697760951" expanded="true" signature="2093:2132" ph="SELECT * FRO... user" />
-                <marker date="1480697760951" expanded="true" signature="2688:2733" ph="SELECT * FRO... comment" />
+                <marker date="1480778454515" expanded="true" signature="4708:4747" ph="SELECT * FRO... user" />
+                <marker date="1480778454515" expanded="true" signature="5597:5669" ph="SELECT * FRO... activity" />
+                <marker date="1480778454515" expanded="true" signature="5636:5668" ph="select MAX(a... activity" />
+                <marker date="1480778454515" expanded="true" signature="5945:6042" ph="INSERT INTO image... " />
+                <marker date="1480778454515" expanded="true" signature="6137:6217" ph="INSERT INTO activity... " />
+                <marker date="1480778454515" expanded="true" signature="6137:6282" ph="INSERT INTO activity... " />
               </folding>
             </state>
           </provider>
@@ -135,9 +177,7 @@
         <option value="$PROJECT_DIR$/cgi-bin/test_imp.py" />
         <option value="$PROJECT_DIR$/cgi-bin/layout.py" />
         <option value="$PROJECT_DIR$/cgi-bin/create_database.py" />
-        <option value="$PROJECT_DIR$/cgi-bin/py_path.py" />
         <option value="$PROJECT_DIR$/js/join_nearby.js" />
-        <option value="$PROJECT_DIR$/cgi-bin/view_database.py" />
         <option value="$PROJECT_DIR$/cgi-bin/py_path_mac.py" />
         <option value="$PROJECT_DIR$/js/log_out.js" />
         <option value="$PROJECT_DIR$/js/profile.js" />
@@ -152,16 +192,21 @@
         <option value="$PROJECT_DIR$/cgi-bin/check_login.py" />
         <option value="$PROJECT_DIR$/js/check_login.js" />
         <option value="$PROJECT_DIR$/cgi-bin/check_login_py.js" />
-        <option value="$PROJECT_DIR$/cgi-bin/thread.py" />
         <option value="$PROJECT_DIR$/js/create_check_login.js" />
-        <option value="$PROJECT_DIR$/activity.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/profile.html" />
         <option value="$PROJECT_DIR$/cgi-bin/profile.py" />
         <option value="$PROJECT_DIR$/js/check_register.js" />
-        <option value="$PROJECT_DIR$/cgi-bin/view_activity.py" />
-        <option value="$PROJECT_DIR$/cgi-bin/create_handle.py" />
         <option value="$PROJECT_DIR$/new_activity.html" />
+        <option value="$PROJECT_DIR$/cgi-bin/py_path.py" />
+        <option value="$PROJECT_DIR$/cgi-bin/resetpw.py" />
+        <option value="$PROJECT_DIR$/activity.html" />
+        <option value="$PROJECT_DIR$/cgi-bin/create_handle.py" />
+        <option value="$PROJECT_DIR$/cgi-bin/thread.py" />
+        <option value="$PROJECT_DIR$/cgi-bin/view_activity.py" />
+        <option value="$PROJECT_DIR$/js/forget.js" />
+        <option value="$PROJECT_DIR$/cgi-bin/view_database.py" />
+        <option value="$PROJECT_DIR$/cgi-bin/findpw.py" />
       </list>
     </option>
   </component>
@@ -202,6 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,35 +277,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,8 +297,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -603,9 +620,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.view_database" />
-        <item index="1" class="java.lang.String" itemvalue="Python.join_near" />
-        <item index="2" class="java.lang.String" itemvalue="Python.create_database" />
-        <item index="3" class="java.lang.String" itemvalue="Python.py_path" />
+        <item index="1" class="java.lang.String" itemvalue="Python.create_database" />
+        <item index="2" class="java.lang.String" itemvalue="Python.py_path" />
+        <item index="3" class="java.lang.String" itemvalue="Python.join_near" />
         <item index="4" class="java.lang.String" itemvalue="Python.test_imp" />
       </list>
     </recent_temporary>
@@ -627,27 +644,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.318323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.071428575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -666,29 +683,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cgi-bin/layout.py" />
-    <entry file="file://$PROJECT_DIR$/cgi-bin/create_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="81" column="42" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/register.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cgi-bin/create_database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -716,25 +710,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cgi-bin/.get_activities.py.swp" />
-    <entry file="file://$PROJECT_DIR$/cgi-bin/create_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cgi-bin/layout.py" />
     <entry file="file://$PROJECT_DIR$/cgi-bin/log_out.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/py_path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -750,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
           <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,18 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/view_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/log_out.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,13 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="77" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thread.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -835,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="41" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,10 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding>
-            <marker date="1480638856108" expanded="true" signature="568:608" ph="SELECT * FRO... user" />
-            <marker date="1480638856108" expanded="true" signature="815:920" ph="INSERT INTO user... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,23 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding>
-            <marker date="1480638844500" expanded="true" signature="244:284" ph="SELECT * FRO... user" />
-            <marker date="1480638844500" expanded="true" signature="543:583" ph="SELECT * FRO... user" />
-            <marker date="1480638844500" expanded="true" signature="1049:1101" ph="UPDATE user " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="96" column="84" selection-start-line="96" selection-start-column="84" selection-end-line="96" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,13 +825,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5597">
           <caret line="193" column="14" selection-start-line="193" selection-start-column="14" selection-end-line="193" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="2460">
           <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
           <folding />
         </state>
@@ -901,13 +839,13 @@
     <entry file="file://$PROJECT_DIR$/cgi-bin/profile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
-            <marker date="1480697760951" expanded="true" signature="296:336" ph="SELECT * FRO... user" />
-            <marker date="1480697760951" expanded="true" signature="632:675" ph="SELECT * FRO... activity" />
-            <marker date="1480697760951" expanded="true" signature="1784:1826" ph="SELECT * FRO... activity" />
-            <marker date="1480697760951" expanded="true" signature="2093:2132" ph="SELECT * FRO... user" />
-            <marker date="1480697760951" expanded="true" signature="2688:2733" ph="SELECT * FRO... comment" />
+            <marker date="1480778316829" expanded="true" signature="298:338" ph="SELECT * FRO... user" />
+            <marker date="1480778316829" expanded="true" signature="634:677" ph="SELECT * FRO... activity" />
+            <marker date="1480778316829" expanded="true" signature="1786:1828" ph="SELECT * FRO... activity" />
+            <marker date="1480778316829" expanded="true" signature="2095:2134" ph="SELECT * FRO... user" />
+            <marker date="1480778316829" expanded="true" signature="2690:2735" ph="SELECT * FRO... comment" />
           </folding>
         </state>
       </provider>
@@ -916,17 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1480651155967" expanded="true" signature="292:308" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/thread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="50" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1080">
           <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,44 +883,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#28#40#0" expanded="true" />
-            <marker date="1480649302261" expanded="true" signature="261:301" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/create_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="236" column="32" selection-start-line="236" selection-start-column="32" selection-end-line="236" selection-end-column="32" />
-          <folding>
-            <marker date="1480700187984" expanded="true" signature="4693:4732" ph="SELECT * FRO... user" />
-            <marker date="1480700187984" expanded="true" signature="5582:5654" ph="SELECT * FRO... activity" />
-            <marker date="1480700187984" expanded="true" signature="5621:5653" ph="select MAX(a... activity" />
-            <marker date="1480700187984" expanded="true" signature="5930:6027" ph="INSERT INTO image... " />
-            <marker date="1480700187984" expanded="true" signature="6122:6202" ph="INSERT INTO activity... " />
-            <marker date="1480700187984" expanded="true" signature="6122:6267" ph="INSERT INTO activity... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgi-bin/view_activity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
-          <folding>
-            <marker date="1480699185637" expanded="true" signature="317:355" ph="SELECT * FRO... activity" />
-            <marker date="1480699185637" expanded="true" signature="893:936" ph="select path image" />
-            <marker date="1480699185637" expanded="true" signature="1222:1264" ph="select * fro... comment" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_activity.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
-          <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/py_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="39" column="63" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/create_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <marker date="1480778454515" expanded="true" signature="4708:4747" ph="SELECT * FRO... user" />
+            <marker date="1480778454515" expanded="true" signature="5597:5669" ph="SELECT * FRO... activity" />
+            <marker date="1480778454515" expanded="true" signature="5636:5668" ph="select MAX(a... activity" />
+            <marker date="1480778454515" expanded="true" signature="5945:6042" ph="INSERT INTO image... " />
+            <marker date="1480778454515" expanded="true" signature="6137:6217" ph="INSERT INTO activity... " />
+            <marker date="1480778454515" expanded="true" signature="6137:6282" ph="INSERT INTO activity... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="77" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/view_activity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+          <folding>
+            <marker date="1480778454562" expanded="true" signature="319:357" ph="SELECT * FRO... activity" />
+            <marker date="1480778454562" expanded="true" signature="895:938" ph="select path image" />
+            <marker date="1480778454562" expanded="true" signature="1224:1266" ph="select * fro... comment" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/create_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding>
+            <marker date="1480778316798" expanded="true" signature="554:833" ph="CREATE TABLE... activity" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/resetpw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#27#39#0" expanded="true" />
+            <marker date="1480778337207" expanded="true" signature="254:374" ph="SELECT creat... sec_code" />
+            <marker date="1480778337207" expanded="true" signature="751:804" ph="UPDATE user " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/view_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <marker date="1480779012546" expanded="true" signature="130:148" ph="SELECT * FRO... user" />
+            <marker date="1480779012546" expanded="true" signature="223:245" ph="SELECT * FRO... activity" />
+            <marker date="1480779012546" expanded="true" signature="323:342" ph="SELECT * FRO... image" />
+            <marker date="1480779012546" expanded="true" signature="416:438" ph="SELECT * FRO... sec_code" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgi-bin/findpw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="68" column="15" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
+          <folding>
+            <element signature="e#28#40#0" expanded="true" />
+            <marker date="1480779260927" expanded="true" signature="358:398" ph="SELECT * FRO... user" />
+            <marker date="1480779260927" expanded="true" signature="1603:1645" ph="DELETE FROM " />
+            <marker date="1480779260927" expanded="true" signature="1680:1763" ph="INSERT INTO sec_code... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/forget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding />
         </state>
       </provider>
