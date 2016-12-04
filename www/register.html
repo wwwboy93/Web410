@@ -3,12 +3,14 @@
 <head>
 	<title>Sign Up</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/register.js"></script>
 	<script src="js/check_register.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 </head>
 <body>
 <div>
 	<h1>Sign Up</h1>
-	<form method="POST" onsubmit='return check_all();' action="/cgi-bin/register.py">
+		<div class="register">
 		<table>
 			<tr>
 				<td>
@@ -24,7 +26,7 @@
 					Password:
 				</td>
 				<td>
-					<input type="password" name="password"/>
+					<input type="password" id="password" name="password"/>
 				</td>
 			</tr>
 			<tr>
@@ -36,14 +38,19 @@
 					<span id="email_check"></span>
 				</td>
 			</tr>
+			<tr>
+	            <td colspan="2" id="register_td"><button type="button" id="register">register</button>   </td>
+			</tr>
 		</table>		
-		<input type="submit" value="Sign up!"/>
-	</form>	
+		</div>
+	<br>
 	<div class="index_div2">
         <form action="/index.html">
             <input type="submit" value="Back to Home Page">
         </form>
 	</div>
+	<br>
+	<div id="register_res"></div>
 
 
 </div>

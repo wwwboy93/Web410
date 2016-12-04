@@ -1,0 +1,55 @@
+$(document).ready(function() {
+    console.log("start to register");
+    $('#register').click(register);
+});
+
+var register = function() {
+    var $username = $('#username').val();
+    var $password = $('#password').val();
+    var $email = $('#email').val();
+    console.log("register get: " + $username + " " + $password + " " + $email);
+
+    $.ajax({
+        url: '../cgi-bin/register.py',
+
+        data: {
+            username: $username,
+            password: $password,
+            email: $email
+        },
+
+        type: "POST",
+
+        dataType: "json",
+
+        success: function(response) {
+            console.log("register successfully");
+            console.log(response);
+            
+            $('#error').empty();
+            if (response.response == -1) {
+                console.log("register.py returns -1");
+            }
+            else {
+                console.log("Welcome, " + $username + " , register succeed!");
+                $('#register_res').html("<font color=\"red\" size=\"5\">Register succeed!  Welcome to HangOut! </font>")
+                // $('.login').append("<button id='log_out' >logout</button>");
+                $('.register').hide();
+                var $NameWithID = $username + ";" + response.userid;
+                $.cookie($NameWithID, response.transid, { expires: 60 });
+                // Set a cookie at Client with the returned transID (transaction ID) expires within 60 days
+
+                // var $NameWithID = $username + ";" + response.userid;
+                // $.cookie($NameWithID, response.transid, { expires: 60 });
+                
+            }
+
+        },
+
+        error: function(request) {
+            console.log("register.js error");
+        }
+    });
+    
+};
+
