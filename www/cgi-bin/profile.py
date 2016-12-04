@@ -27,26 +27,53 @@ def profile(username):
         return [results1[0], results1[3]]  # user_id , email
 
 
-def profile_activity(user_id):
-    conn2 = sqlite3.connect('hangout.db')
-    cursor2 = conn2.cursor()
-    results2 = cursor2.execute("SELECT * FROM activity where user_id = '%s';" % (user_id)).fetchall()
-    conn2.close()
-    # results2 == [(1, 1, u'first activity ever', u'hello from hangout1', u'2016-11-28 19:57:42.426000', u'sport', u'Rochester', 1), (2, 1, u'second activity ever', u'hello again from hangout1', u'2016-11-28 19:57:42.426000', u'travel', u'Rochester', 0), (3, 1, u'third activity ever', u'hello one more time from hangout1', u'2016-11-28 19:57:42.426000', u'game', u'Rochester', 0)]
-    if results2 is None:
+# def profile_activity(user_id):
+#     conn2 = sqlite3.connect('hangout.db')
+#     cursor2 = conn2.cursor()
+#     results2 = cursor2.execute("SELECT * FROM activity where user_id = '%s';" % (user_id)).fetchall()
+#     conn2.close()
+#     # results2 == [(1, 1, u'first activity ever', u'hello from hangout1', u'2016-11-28 19:57:42.426000', u'sport', u'Rochester', 1), (2, 1, u'second activity ever', u'hello again from hangout1', u'2016-11-28 19:57:42.426000', u'travel', u'Rochester', 0), (3, 1, u'third activity ever', u'hello one more time from hangout1', u'2016-11-28 19:57:42.426000', u'game', u'Rochester', 0)]
+#     if results2 is None:
+#         return -1
+#     else:
+#         # print results2
+#         # print
+#         all_activity = ""
+#         for row in results2:
+#             content1 = row[3].replace("<p>", "")
+#             content2 = content1.replace("</p>", "")
+#             all_activity += (
+#             "<font color=\"green\">" + "<pre>Title:\t\t" + row[2] + "<br>Content:\t" + content2 + "<br>Create time:\t" +
+#             row[4][:-7] + "<br>Catagory:\t" + row[5] + "<br>Area:\t\t" + row[6] + '<br>' + "</font>")
+#         # print all_activity
+#         return all_activity
+
+
+def get_all_activities(user_id):
+    activities_json = []
+    conn = sqlite3.connect('hangout.db')
+    cursor = conn.cursor()
+    activities = cursor.execute("SELECT activity.act_id, title, content, category, area, reply_times, activity.create_time FROM activity, user "
+                                "where activity.user_id = user.user_id AND activity.user_id = '%s'" % (user_id));
+    if activities is None:
+        conn.close()
         return -1
-    else:
-        # print results2
-        # print
-        all_activity = ""
-        for row in results2:
-            content1 = row[3].replace("<p>", "")
-            content2 = content1.replace("</p>", "")
-            all_activity += (
-            "<font color=\"blue\">" + "<pre>Title:\t\t" + row[2] + "<br>Content:\t" + content2 + "<br>Create time:\t" +
-            row[4][:-7] + "<br>Catagory:\t" + row[5] + "<br>Area:\t\t" + row[6] + '<br>' + "</font>")
-        # print all_activity
-        return all_activity
+
+    for activity in activities:
+        activity_json = { }
+        # print activity
+        activity_json["act_id"] = str(activity[0])
+        activity_json["title"] = str(activity[1])
+        activity_json["content"] = str(activity[2])
+        activity_json["category"] = str(activity[3])
+        activity_json["area"] = str(activity[4])
+        activity_json["reply_times"] = str(activity[5])
+        activity_json["create_time"] = str(activity[6])[0:-7]
+        # print activity_json
+        activities_json += [activity_json]
+
+    conn.close()
+    return activities_json
 
 
 def get_act_title_using_id(act_id):
@@ -96,7 +123,7 @@ def profile_reply(user_id):
         # print results3
         for row in results3:
             all_replies += (
-            "<font color=\"blue\">" + "<pre>Activity:\t" + get_act_title_using_id(row[1]) + "<br>My Reply:\t" + row[
+            "<font color=\"green\">" + "<pre>Activity:\t" + get_act_title_using_id(row[1]) + "<br>My Reply:\t" + row[
                 2] + "<br>Create time:\t" + row[3][:-7] + "<br>Replier:\t" + get_replier_using_id(
                 row[4]) + '<br>' + "</font>")
         # print all_replies
@@ -117,18 +144,20 @@ email = res1[1]
 if email == None:
     email = ""
 else:
-    email = "<font color=\"blue\">" + email + "</font>"
+    email = "<font color=\"green\">" + email + "</font>"
 
-activities_str = profile_activity(user_id)
+# activities_str = profile_activity(user_id)
+activities_dict = get_all_activities(user_id)
+# print activities_dict
 reply_str = profile_reply(user_id)
 # print reply_str
 
 res = {}
 res['email'] = email
-res['activities_str'] = activities_str
+res['activities_dict'] = activities_dict
 res['reply_str'] = reply_str
 
-if res1 == -1 and activities_str == -1 and reply_str == -1:
+if res1 == -1 and activities_dict == -1 and reply_str == -1:
     response['response'] = -1
 else:
     response = res

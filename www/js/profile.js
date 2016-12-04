@@ -33,9 +33,24 @@ $(document).ready(function() {
                     $('#profile_res4').html("Can not get user replies!");
                 }
                 else { 
-                    $('#profile_res1').html("<font color=\"blue\">" + $username + "</font>");
+                    $('#profile_res1').html("<font color=\"green\">" + $username + "</font>");
                     $('#profile_res2').html(response.email);
-                    $('#profile_res3').html(response.activities_str);
+
+                    var activities = response.activities_dict;
+                    // var $all_activities = $('#all_activities');
+                    var activities_str = ""
+                    for (var i = 0; i < activities.length; i++) {
+                        var activity = activities[i];
+                        activities_str += "<font color=\"green\">" + "<pre>Title:\t\t" + add_link(activity.act_id, activity.title) + "<br>Content:\t" + activity.content + "<br>reply times:\t" + activity.reply_times + "<br>Create time:\t" + activity.create_time + "<br>Catagory:\t" + activity.category + "<br>Area:\t\t" + activity.area + '<br>' + "</font>"
+                        // tr += "<td>" + add_link(activity.act_id, activity.title) + "</td>";
+                        // tr += "<td>" + activity.content + "</td>";
+                        // tr += "<td>" + activity.category + "</td>";
+                        // tr += "<td>" + activity.area + "</td>";
+                        // tr += "<td>" + activity.reply_times + "</td>";
+                        // tr += "<td>" + activity.create_time + "</td>";
+                        // tr += "</tr>";
+                    }
+                    $('#profile_res3').html(activities_str);
                     $('#profile_res4').html(response.reply_str);
                     console.log("multiple response" + response);
                     
@@ -54,6 +69,9 @@ $(document).ready(function() {
 
 });
 
+function add_link(id, title) {
+    return "<a href=\"../cgi-bin/" + "view_activity.py?id=" + id + "\">" + title + "</a>";
+}
 
 
 
