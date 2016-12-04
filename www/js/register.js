@@ -32,7 +32,7 @@ var register = function() {
             }
             else {
                 console.log("Welcome, " + $username + " , register succeed!");
-                $('#register_res').html("<font color=\"red\" size=\"5\">Register succeed!  Welcome to HangOut! </font>")
+                $('#register_res').html("<font color=\"blue\" size=\"5\">Register succeed!  Welcome to HangOut! </font>")
                 // $('.login').append("<button id='log_out' >logout</button>");
                 $('.register').hide();
                 var $NameWithID = $username + ";" + response.userid;
