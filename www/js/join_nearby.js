@@ -12,8 +12,10 @@ $(document).ready(function() {
 /* list all activities by their created time */
 var join = function list_all_activities() {
     console.log("start to list activities");
+
     if($("#area").val()==-1)
         return;
+    console.log("area:"+$("#area").val());
     $.ajax({
         url: '../cgi-bin/join_near.py',
 

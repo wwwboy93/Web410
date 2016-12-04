@@ -17,7 +17,7 @@ def get_activity_by_area(area):
     conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()
     activities = cursor.execute("SELECT act_id, title, username, reply_times, activity.create_time FROM activity, user "
-                                "where area = '%s'" % area)
+                                "where activity.user_id=user.user_id and area = '%s'" % area)
     if activities is None:
         conn.close()
         return -1

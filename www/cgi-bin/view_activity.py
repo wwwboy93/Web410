@@ -155,7 +155,7 @@ print '''
 	<div id="body_main">
 		<div id="body_head">
 		<div id="view_table">
-		<table>
+		<table id="view_table">
 		    <tr><td colspan='3' class="table_title">
 '''
 

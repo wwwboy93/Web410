@@ -50,13 +50,20 @@ function add_comment() {
             console.log("add comment successfully");
             console.log(response);
             // add this new comment to the end of comment area
-            var new_comment = "<div class=\"comment\">";
-            new_comment += "<div class=\"left_comment\">";
-            new_comment += "<p>username: " + $replier_name + "</p>";
-            new_comment += "<p>time: " + response.update + "</p></div>";
-            new_comment += "<div class=\"right_comment\">";
-            new_comment += "<p>" + $content + "</p></div></div>";
-            $('#content_comment').append(new_comment);
+            $table=$("#view_table");
+            var new_comment = "<tr><td class='view_col1'>";
+            new_comment+="<p>username: " + $replier_name + "</p>";
+            new_comment+="<p>time: " + response.update + "</p></td><td  class='view_col2'>";
+            new_comment+="<p>" + $content + "</p></td><td class='view_col3'></td>";
+
+            $table.append(new_comment);
+
+            // new_comment += "<div class=\"left_comment\">";
+            // new_comment += "<p>username: " + $replier_name + "</p>";
+            // new_comment += "<p>time: " + response.update + "</p></div>";
+            // new_comment += "<div class=\"right_comment\">";
+            // new_comment += "<p>" +  + "</p></div></div>";
+            // $('#content_comment').append(new_comment);
             $('#reply_area').val('');
 
             console.log("end of add a new comment");
