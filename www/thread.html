@@ -5,6 +5,7 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="./js/widgEditor.js"></script>
+	<script src="js/search.js"></script>
 	
 	<style type="text/css" media="all">
 		@import "css/main.css";
@@ -37,7 +38,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button><span id="login_td_span"></span>	</td>
 						</tr>
 					</table>
 				</div>
@@ -63,7 +64,7 @@
 
 				<div id="search_bar">
 					<input type="text" name="search_bar" id= "search"/>
-					<input type="button" name="search_click" id="search_btn" value="GO!">
+					<button id="search_btn">GO!</button>
 				</div>
 			</ul>
 

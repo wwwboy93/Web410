@@ -4,6 +4,8 @@
 
 
 
+
+
 import sqlite3
 import hashlib
 import datetime
@@ -52,21 +54,22 @@ cursor.execute("INSERT INTO user(user_id, username, password, create_time) VALUE
                % (encrypted, date))
 # insert two sample activity
 cursor.execute("INSERT INTO activity(act_id,user_id, title, content,create_time, category, area, reply_times)"
-                   "VALUES ('1','1','first activity ever','hello from hangout1','%s','sport','Rochester', 1);" % (date))
+                   "VALUES ('1','1','first activity ever','hello from hangout1','%s','sport','NY', 1);" % (date))
 cursor.execute("INSERT INTO activity(act_id,user_id, title, content,create_time, category, area, reply_times)"
-                   "VALUES ('2','1','second activity ever','hello again from hangout1','%s','travel','Rochester', 0);" % (date))
+                   "VALUES ('2','1','second activity ever','hello again from hangout1','%s','travel','AL', 0);" % (date))
 cursor.execute("INSERT INTO activity(act_id,user_id, title, content,create_time, category, area, reply_times)"
-                   "VALUES ('3','1','third activity ever','hello one more time from hangout1','%s','game','Rochester', 0);" % (date))
+                   "VALUES ('3','1','third activity ever','hello one more time from hangout1','%s','game','NY', 0);" % (date))
 # cursor.execute("INSERT INTO image(path, activity_id, comment_id)"
 #                "VALUES ('1.jpg','1','0');")
 
 # insert some images
-cursor.execute("insert into image(img_id, path, activity_id) VALUES ('1', 'xinlei.jpg', '1');")
-
+cursor.execute("insert into image(img_id, path, activity_id) VALUES ('1', 'slide1.jpg', '1');")
+cursor.execute("insert into image(img_id, path, activity_id) VALUES ('2', 'slide2.jpg', '2');")
+cursor.execute("insert into image(img_id, path, activity_id) VALUES ('3', 'slide3.jpg', '3');")
 # insert some comments
 cursor.execute("insert into comment(com_id, activity_id, content, create_time, replier_id, replier_name)"
                 "VALUES ('1', '1', 'Hello from comment', '%s', '1', 'admin');" % (date))
-# cursor.execute("DROP TABLE user")
+
 conn.commit()
 conn.close()
 

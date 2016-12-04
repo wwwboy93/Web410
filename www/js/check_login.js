@@ -34,7 +34,7 @@ $(document).ready(function() {
                 
                 $('#error').empty();
                 if (response.response == -1) {
-                    $('#login_td').append('<font color=\"red\">Please login again</font>');
+
                 }
                 else {
                     $('.login').html("Welcome, " + $username + "&nbsp&nbsp&nbsp<a href='./profile.html'>profile</a>&nbsp&nbsp&nbsp");

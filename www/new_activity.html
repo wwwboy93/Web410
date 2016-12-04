@@ -10,7 +10,8 @@
 	<script src="js/log_out.js"></script>
 	<script src="js/check_login.js"></script>
 	<script src="js/create_check_login.js"></script>
-	
+	<script src="js/search.js"></script>
+	<script src="js/check_create.js"></script>
 	<style type="text/css" media="all">
 		@import "css/main.css";
 		@import "css/widgEditor.css";
@@ -42,7 +43,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button><span id="login_td_span"></span>	</td>
 						</tr>
 					</table>
 				</div>
@@ -68,7 +69,7 @@
 
 				<div id="search_bar">
 					<input type="text" name="search_bar" id= "search"/>
-					<input type="button" name="search_click" id="search_btn" value="GO!">
+					<button id="search_btn">GO!</button>
 				</div>
 			</ul>
 
@@ -78,13 +79,13 @@
 	</div>
 	<div id="body_main">
 		<div id="body_head">
-			<form action="./cgi-bin/create_handle.py" id="create_form" method="POST" enctype="multipart/form-data">
+			<form action="./cgi-bin/create_handle.py" onsubmit="return check_create()" id="create_form" method="POST" enctype="multipart/form-data">
 			<div id="ahead_editor">
-				<p>Title:<input type="text" name="title"/></p>
+				<p>Title:<input type="text" id="title" name="title"/></p>
 				<p>Picture:<input type=FILE name="picture" accept="image/*" size=50></p>
 				<p>Choose catgory:
 					<select name="category">
-					  <option value="1">Sports</option>
+					  <option value="1" checked>Sports</option>
 					  <option value="2">Travel</option>
 					  <option value="3">Game</option>
 					  <option value="4">Events</option>

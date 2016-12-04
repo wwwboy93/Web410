@@ -92,9 +92,9 @@ div{
 
 #menu .dropdown-content a:hover {background-color: #f1f1f1}
 
-#menu .dropdown:hover .dropdown-content {
+/*#menu .dropdown:hover .dropdown-content {
     display: block;
-}
+}*/
 
 #search_bar{
 	float: right;
@@ -258,14 +258,13 @@ div{
 	margin: 0 10%;
 	margin-top: 5px;
 	width: 80%;
-	height: 150px;
 	border: 2px solid;
 }
 .left_comment{
 	float: left;
 	margin-left: 3%;
 	width: 20%;
-	height: 150px;
+	min-height: 150px;
 	border: 1px solid;
 	display: inline;
 }
@@ -273,7 +272,7 @@ div{
 	margin-right: 10%;
 	float: right;
 	width: 65%;
-	height: 150px;
+	min-height: 150px;
 	border: 1px solid;
 }
 
@@ -317,4 +316,42 @@ div{
 #join_main{
 	font-size: 30px;
 	padding: 5px 10%;
+}
+
+/*view_table*/
+#view_table{
+	width: 90%;
+	margin: 0 auto;
+}
+#view_table table{
+	border-collapse: collapse;
+    width: 100%;
+}
+#view_table th,#view_table td{
+	padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.table_title{
+	text-align: center;
+	font-size: 30px;
+	width:90%;
+}
+#view_table tr:nth-child(even) {background-color: #f2f2f2}
+#view_table tr:nth-child(even) {background-color: #FFFFFF}
+.view_col1{
+	width: 20%;
+	font-family: fantasy;
+	font-size: 20px;
+}
+.view_col2{
+	width:60%
+}
+.view_col3{
+	width:10%;
+	font-size: 20px;
+}
+#view_table td {
+  border-right: solid 1px olivedrab;
+  border-left: solid 1px olivedrab;
 }

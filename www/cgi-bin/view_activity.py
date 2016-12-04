@@ -3,6 +3,8 @@
 
 
 
+
+
 import cgi
 import cgitb
 import sqlite3
@@ -33,6 +35,9 @@ def get_activity():
         activity['category'] = str(__activity[5])
         activity['area'] = str(__activity[6])
         activity['reply_times'] = str(__activity[7])
+        username = cursor.execute("SELECT username FROM user where user_id = " + activity['user_id'])
+        for name in username:
+        	activity['username'] = str(name[0])
         img_path = cursor.execute("select path from image where activity_id = " + act_id)
         for _img_path in img_path:
             activity['img_path'] = "../pics/memberphotos/" + str(_img_path[0])
@@ -77,9 +82,11 @@ print '''
 	<script src="../js/widgEditor.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/login.js"></script>
-	<script src="../js/log_out.js"></script>
+	<script src="../js/log_out_py.js"></script>
 	<script src="../js/check_login_py.js"></script>
-	
+	<script src="../js/add_comment.js"></script>
+	<script src="../js/modify_check.js"></script>
+	<script src="../js/search.js"></script>
 	<style type="text/css" media="all">
 		@import "../css/main.css";
 		@import "../css/widgEditor.css";
@@ -101,7 +108,7 @@ print '''
 						<tr>
 							<td>username:</td>
 							<td><input type="text" id="username"></td>
-							<td><a href="./register.html">Sign up</a></td>
+							<td><a href="../register.html">Sign up</a></td>
 						</tr>
 						<tr>
 							<td>password:</td>
@@ -111,7 +118,7 @@ print '''
 						</tr>
 						<tr>
 							<td></td>
-							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button><span id="login_td_span"></span>	</td>
 						</tr>
 					</table>
 				</div>
@@ -137,7 +144,7 @@ print '''
 
 				<div id="search_bar">
 					<input type="text" name="search_bar" id= "search"/>
-					<input type="button" name="search_click" id="search_btn" value="GO!">
+					<button id="search_btn">GO!</button>
 				</div>
 			</ul>
 
@@ -147,30 +154,50 @@ print '''
 	</div>
 	<div id="body_main">
 		<div id="body_head">
-			<div id="thread_title">
+		<div id="view_table">
+		<table>
+		    <tr><td colspan='3' class="table_title">
 '''
 
-print activity['title'] + "</div>"
+print activity['title'] + "</td>"
 
 # print the content of the activity
-print "<div class=\"comment\">"
+print "<tr>"
+print "<td class='view_col1'>"
+print "<p >username: " + activity['username'] + "</p>"
+print "<p>time: " + activity['create_time'] + "</p>"
+print "<input type='text' id='act_id' value='"+activity['act_id']+"' hidden>"
+print "<input type='text'id='create_username' value='"+activity['username']+"' hidden>"
+
+print "</td><td class='view_col2'>"
+if 'img_path' in activity:
+    print "<img style=\"height:200px; width:auto\" src=\"" + activity['img_path'] + "\">"
 print "<p>" + activity['content'] + "</p>"
-print "</br>"
-print "<img style=\"height:200px; width:auto\" src=\"" + activity['img_path'] + "\">"
-print "</div>"
+
+print "</td>" \
+      "<td class='view_col3' id='modify_op'></td>"
 
 
 # print comments
 for comment in comments:
-    print "<div class=\"comment\">"
-    print "<div class=\"left_comment\">"
+    print "<tr>"
+    print "<td class='view_col1'>"
     print "<p>username: " + comment['replier_name'] + "</p>"
-    print "<p>time: " + comment['create_time'] + "</p>";
-    print "</div>"
-    print "<div class=\"right_comment\">"
-    print "<p>" + comment['content'] + "</p>";
-    print "</div></div>"
+    print "<p>time: " + comment['create_time'] + "</p>"
+    print "</td><td class='view_col2'>"
+    print "<p>" + comment['content'] + "</p>"
+    print "</td>" \
+          "<td class='view_col3'></td>"
 
-print "</div></div>"
+print "</table></div>"
+
+# add editor
+print '''
+		<div id="re_editor">
+				<textarea id="reply_area" name="reply"></textarea>
+				<button id="submit">reply</button>
+		</div></div></div>
+		'''
 print "</body></html>"
+
 

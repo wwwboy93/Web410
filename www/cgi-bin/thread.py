@@ -2,6 +2,8 @@
 
 
 
+
+
 print 'Content-Type: text/html'
 print
 
@@ -15,9 +17,9 @@ print '''
 	<script src="../js/widgEditor.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../js/login.js"></script>
-	<script src="../js/log_out.js"></script>
+	<script src="../js/log_out_py.js"></script>
 	<script src="../js/check_login_py.js"></script>
-
+    <script src="../js/search.js"></script>
 	<style type="text/css" media="all">
 		@import "../css/main.css";
 		@import "../css/widgEditor.css";
@@ -39,7 +41,7 @@ print '''
 						<tr>
 							<td>username:</td>
 							<td><input type="text" id="username"></td>
-							<td><a href="./register.html">Sign up</a></td>
+							<td><a href="../register.html">Sign up</a></td>
 						</tr>
 						<tr>
 							<td>password:</td>
@@ -49,7 +51,7 @@ print '''
 						</tr>
 						<tr>
 							<td></td>
-							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button><span id="login_td_span"></span>	</td>
 						</tr>
 					</table>
 				</div>
@@ -75,7 +77,7 @@ print '''
 
 				<div id="search_bar">
 					<input type="text" name="search_bar" id= "search"/>
-					<input type="button" name="search_click" id="search_btn" value="GO!">
+					<button id="search_btn">GO!</button>
 				</div>
 			</ul>
 

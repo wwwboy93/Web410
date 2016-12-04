@@ -38,7 +38,7 @@ var login = function() {
             
             $('#error').empty();
             if (response.response == -1) {
-                $('#login_td').append('<font color=\"red\">wrong username or password</font>');
+                $('#login_td_span').html('<font color=\"red\">wrong username or password</font>');
                 clear_login_info();
                 
             }

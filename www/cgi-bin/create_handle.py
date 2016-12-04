@@ -4,6 +4,8 @@
 
 
 
+
+
 print "Content type: text/html"
 print
 
@@ -17,9 +19,9 @@ print '''
 	<script src="../js/widgEditor.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/login.js"></script>
-	<script src="../js/log_out.js"></script>
+	<script src="../js/log_out_py.js"></script>
 	<script src="../js/check_login_py.js"></script>
-
+    <script src="../js/search.js"></script>
 	<style type="text/css" media="all">
 		@import "../css/main.css";
 		@import "../css/widgEditor.css";
@@ -41,7 +43,7 @@ print '''
 						<tr>
 							<td>username:</td>
 							<td><input type="text" id="username"></td>
-							<td><a href="./register.html">Sign up</a></td>
+							<td><a href="../register.html">Sign up</a></td>
 						</tr>
 						<tr>
 							<td>password:</td>
@@ -51,7 +53,7 @@ print '''
 						</tr>
 						<tr>
 							<td></td>
-							<td colspan="2" id="login_td"><button type="button" id="login">login</button>	</td>
+							<td colspan="2" id="login_td"><button type="button" id="login">login</button><span id="login_td_span"></span>	</td>
 						</tr>
 					</table>
 				</div>
@@ -77,7 +79,7 @@ print '''
 
 				<div id="search_bar">
 					<input type="text" name="search_bar" id= "search"/>
-					<input type="button" name="search_click" id="search_btn" value="GO!">
+					<button id="search_btn">GO!</button>
 				</div>
 			</ul>
 
@@ -217,7 +219,11 @@ def insert_activity(form):
     date = str(datetime.datetime.now())
     cursor.execute("SELECT * FROM activity where act_id = (select MAX(act_id) from activity)")
     results=cursor.fetchone()
-    new_id=int(results[0])+1
+    if results is None:
+        new_id = 0
+    else:
+        new_id=int(results[0])+1
+
     try:
         filename=process_fileitem(file_field_name, form, loc_path, file_types)
     except:
@@ -227,8 +233,8 @@ def insert_activity(form):
         cursor.execute("INSERT INTO image(path, activity_id, comment_id)"
                        "VALUES ('%s','%s','%s');" % (filename, new_id, 0))
     category_name=get_category_name(category);
-    cursor.execute("INSERT INTO activity(act_id,user_id, title, content,create_time, category, area)"
-                   "VALUES ('%s','%s','%s','%s','%s','%s','%s');"
+    cursor.execute("INSERT INTO activity(act_id,user_id, title, content,create_time, category, area, reply_times)"
+                   "VALUES ('%s','%s','%s','%s','%s','%s','%s', 0);"
                    % (new_id, user_id, title, noise, date, str(category_name), area))
 
     conn.commit()
@@ -249,7 +255,7 @@ else:
     print '''
     <div style="margin-left:20%;margin-top:50px; font-size:25px; font-family:fantasy;">Successfully create the thread! Redirect to the thread</div>
     '''
-    # print "<script>setTimeout(function(){window.location.href = 'thread.py?id=%d';},3000)</script>" % new_id
+    print "<script>setTimeout(function(){window.location.href = 'thread.py?id=%d';},3000)</script>" % new_id
 
     print '''
 
