@@ -31,6 +31,15 @@ var register = function() {
                 console.log("register.py returns -1");
             }
             else {
+                var $cookie_old = $.cookie();
+                console.log("Old cookie: " + $cookie_old)
+                var $NameWithID_old = Object.keys($cookie_old)[0];
+                console.log("Old NameWithID_old: " + $NameWithID_old)
+                if ($NameWithID_old != null) {
+                    $.removeCookie($NameWithID_old);
+                    console.log("Old NameWithID_old removed: " + $NameWithID_old)
+                }
+
                 console.log("Welcome, " + $username + " , register succeed!");
                 $('#register_res').html("<font color=\"blue\" size=\"5\">Register succeed!  Welcome to HangOut! </font>")
                 // $('.login').append("<button id='log_out' >logout</button>");
