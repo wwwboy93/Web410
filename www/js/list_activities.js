@@ -9,7 +9,7 @@ $(document).ready(function() {
     list_all_activities();
 });
 
-function list_activities_by_category() {
+var list_activities_by_category = function() {
     /* to be done*/
     console.log("list activities by categories");
 
@@ -51,7 +51,7 @@ function list_activities_by_category() {
 };
 
 /* list all activities by their created time */
-function list_all_activities() {
+var list_all_activities = function() {
     console.log("start to list activities");
 
     $.ajax({
@@ -95,6 +95,6 @@ function list_all_activities() {
     }); 
 };
 
-function add_link(id, title) {
+var add_link = function(id, title) {
     return "<a href=\"../cgi-bin/" + "view_activity.py?id=" + id + "\">" + title + "</a>";
 }

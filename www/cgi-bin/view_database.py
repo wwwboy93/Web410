@@ -27,5 +27,8 @@ results = cursor.execute("SELECT * FROM sec_code;")
 print "sec_code"
 for r in results:
     print r
-
+results = cursor.execute("SELECT * FROM comment;")
+print "comment"
+for r in results:
+    print r
 conn.close()

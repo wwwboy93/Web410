@@ -31,7 +31,7 @@ def get_activity():
         activity['user_id'] = str(__activity[1])
         activity['title'] = str(__activity[2])
         activity['content'] = str(__activity[3])
-        activity['create_time'] = str(__activity[4])
+        activity['create_time'] = str(__activity[4])[0 : -7]
         activity['category'] = str(__activity[5])
         activity['area'] = str(__activity[6])
         activity['reply_times'] = str(__activity[7])
@@ -60,7 +60,7 @@ def get_comments():
         comment['com_id'] = str(_comment[0])
         comment['activity_id'] = str(_comment[1])
         comment['content'] = str(_comment[2])
-        comment['create_time'] = str(_comment[3])[0 : -7];
+        comment['create_time'] = str(_comment[3])[0 : -7]
         comment['replier_id'] = str(_comment[4])
         comment['replier_name'] = str(_comment[5])
         comments += [comment]

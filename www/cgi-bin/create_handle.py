@@ -179,13 +179,13 @@ def process_fileitem( file_item_name, form, local_file_path , allowed_file_types
 
 def get_category_name(category):
     if(category=="1"):
-        return "sport";
+        return "sport"
     if(category=="2"):
-        return "travel";
+        return "travel"
     if(category=="3"):
-        return "game";
+        return "game"
     if(category=="4"):
-        return "event";
+        return "event"
 
 def create_login_check(userid, transid):
     conn = sqlite3.connect('hangout.db')
@@ -255,7 +255,7 @@ else:
     print '''
     <div style="margin-left:20%;margin-top:50px; font-size:25px; font-family:fantasy;">Successfully create the thread! Redirect to the thread</div>
     '''
-    print "<script>setTimeout(function(){window.location.href = 'thread.py?id=%d';},3000)</script>" % new_id
+    print "<script>setTimeout(function(){window.location.href = 'view_activity.py?id=%d';},3000)</script>" % new_id
 
     print '''
 

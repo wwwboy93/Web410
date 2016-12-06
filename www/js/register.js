@@ -7,6 +7,13 @@ var register = function() {
     var $username = $('#username').val();
     var $password = $('#password').val();
     var $email = $('#email').val();
+
+    var pattern="^[_/.a-z0-9]+@[a-z0-9]+[/.][a-z0-9]{2,}$";
+    var check=new RegExp(pattern);
+	if(!check.test($email)) {
+        return false;
+    }
+
     console.log("register get: " + $username + " " + $password + " " + $email);
 
     $.ajax({

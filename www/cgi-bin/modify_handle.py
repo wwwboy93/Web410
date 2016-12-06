@@ -92,11 +92,23 @@ print '''
 import sqlite3
 import cgi
 import cgitb; cgitb.enable()
+
+def get_category_name(category):
+    if(category=="1"):
+        return "sport"
+    if(category=="2"):
+        return "travel"
+    if(category=="3"):
+        return "game"
+    if(category=="4"):
+        return "event"
+
 def modify_activity(form):
     user_id=form['user_id'].value
     act_id=form['act_id'].value
     content=form['noise'].value
     category = form['category'].value
+    category = get_category_name(category)
     area = form['area'].value
     conn = sqlite3.connect('hangout.db')
     cursor = conn.cursor()

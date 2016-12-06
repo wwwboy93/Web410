@@ -61,7 +61,7 @@ print "Content-type: application/json"
 print
 
 response = {}
-response['update'] = create_time;
+response['update'] = create_time[0:-7]
 print json.dumps(response)
 
 

@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('#submit').click(add_comment);
 });
 
-function add_comment() {
+var add_comment=function(){
     console.log("add some comment check if logged in");
     // var $cookie = $.cookie();
 
@@ -50,7 +50,7 @@ function add_comment() {
             console.log("add comment successfully");
             console.log(response);
             // add this new comment to the end of comment area
-            $table=$("#view_table");
+            $table=$("#view_table tbody");
             var new_comment = "<tr><td class='view_col1'>";
             new_comment+="<p>username: " + $replier_name + "</p>";
             new_comment+="<p>time: " + response.update + "</p></td><td  class='view_col2'>";

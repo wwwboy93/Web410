@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
 /* list activities by keyword */
-function list_activities_by_keyword() {
+var list_activities_by_keyword = function() {
 	console.log("list activities by keyword");
 	$keyword = $(location).attr('href').split('=')[1];
 	//console.log("keyword = " + $keyword);
@@ -50,6 +50,6 @@ function list_activities_by_keyword() {
      });
 };
 
-function add_link(id, title) {
+var add_link = function(id, title) {
     return "<a href=\"../cgi-bin/" + "view_activity.py?id=" + id + "\">" + title + "</a>";
 }

@@ -36,7 +36,7 @@ var send_email = function() {
             }
             else {
                 
-                $('#send_response').html("<font color=\"black\">succeed to send the email, please input the security code in your email and your new password!</font>")
+                $('#send_response').html("<font color=\"green\">succeed to send the email, please input the security code in your email and your new password!</font>")
             }
         },
 
@@ -82,14 +82,14 @@ var reset_pw = function(){
             console.log(response.response)
             //$('#error').empty();
             if (response.response == -1) {
-                $('#reset_response').html("<font color=\"red\">Security code insert error, please send email agian!</font>")
+                $('#reset_response').html("<font color='red'>Security code insert error, please send email agian!</font>")
             }
             else if(response.response == "wrong_code"){
                 
-                $('#reset_response').html("<font color=\"red\">Wrong code, please insert again</font>")
+                $('#reset_response').html("<font color='red'>Wrong code, please insert again</font>")
             }
             else{
-                $('#reset_response').html("<font color=\"black\">Your password is changed!</font>")
+                $('#reset_response').html("<font color='green'>Your password is changed!</font>")
             }
         },
 
